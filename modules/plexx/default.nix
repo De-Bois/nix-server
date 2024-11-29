@@ -24,24 +24,24 @@ in {
       };
 
       downloadPath = mkOption {
-        type = types.str;
-        default = "/media/plexmedia/downloads";
+        type = types.path;
+        default = /media/plexmedia/downloads;
         description = ''
           The default download path for the Plexx containers.
         '';
       };
 
       moviePath = mkOption {
-        type = types.str;
-        default = "/media/plexmedia/movies";
+        type = types.path;
+        default = /media/plexmedia/movies;
         description = ''
           The default movie path for the Plexx containers.
         '';
       };
 
       seriesPath = mkOption {
-        type = types.str;
-        default = "/media/plexmedia/series";
+        type = types.path;
+        default = /media/plexmedia/series;
         description = ''
           The default series path for the Plexx containers.
         '';
