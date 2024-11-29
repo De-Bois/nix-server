@@ -1,0 +1,9 @@
+keys:
+  - &bois age1dxwtrqqkvs9uz3cjq5skchnzgyvf2lus4q9x5jk765u6gmqz2a5qw4rgve
+  - &thijs age1un688krt52peejpkasc7szn4reccptlmw3wz38j3n7e4ncpgg4wsvekk6l
+creation_rules:
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
+    key_groups:
+    - age:
+      - *bois
+      - *thijs
