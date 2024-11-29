@@ -50,7 +50,7 @@ in
           "41062:80" # HTTP
         ];
         volumes = [
-          "/home/bois/nix-server/blyatclicker:/opt/lampp/htdocs"
+          "/home/bois/blyatclicker:/opt/lampp/htdocs"
           "/etc/blyatclicker/mysql:/opt/lampp/var/mysql/mydb"
         ];
       };
