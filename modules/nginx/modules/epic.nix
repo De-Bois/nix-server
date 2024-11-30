@@ -29,7 +29,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    networking.firewall.allowedTCPPorts = [ port ];
+    networking.firewall.allowedTCPPorts = [ port 3000 ];
     services.nginx.virtualHosts."${serverName}" = {
         inherit serverName;
         listen = [{ inherit port; addr="0.0.0.0"; ssl=enableSSL; }];
@@ -39,8 +39,6 @@ in
             proxyPass = "http://localhost:3000";
       };
     };
-
-    networking.firewall.allowedTCPPorts = [ 3000 ];
 
     virtualisation.oci-containers.backend = "docker";
     virtualisation.oci-containers.containers = {
