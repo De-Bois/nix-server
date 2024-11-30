@@ -46,7 +46,7 @@
 
   fileSystems."MiniPCSchijf" =
     { mountPoint = "/media/MiniPCSchijf";
-      device = "/dev/sda1";
+      device = "/dev/sda";
       fsType = "ext4";
       options = [ "x-systemd.automount" "noauto" "uid=${toString config.users.users.plex.uid }" "gid=${toString config.users.groups.plex.gid}"];
     };
