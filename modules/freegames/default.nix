@@ -19,7 +19,7 @@ in {
           "3000:3000" 
         ];
         volumes = [
-          "/config/:/usr/app/config"
+          "/etc/freegames:/usr/app/config"
         ];
         environment = { 
           "TZ" = "Europe/Amsterdam";
