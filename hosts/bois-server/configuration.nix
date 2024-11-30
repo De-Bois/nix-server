@@ -37,6 +37,7 @@
       plexxGid = toString config.users.groups.plex.gid;
     };
     samba-client.enable = false;
+    freegames.enable = true;
   };
 
   modules.nginx = {
