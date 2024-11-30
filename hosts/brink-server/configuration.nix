@@ -29,7 +29,7 @@
     plexx = {
       enable = true;
       plexxUid = toString config.users.users.thijs.uid;
-      plexxGid = toString config.users.groups.thijs.gid;
+      plexxGid = toString config.users.groups.users.gid;
       downloadPath = "/media/plexmedia/downloads";
       moviePath = "/media/MiniPCSchijf/Films";
       seriesPath = "/media/MiniPCSchijf/Series";
