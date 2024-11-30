@@ -20,7 +20,6 @@
     ./pelican-wings
     ./plex
     ./plexx
-    ./freegames
     ./samba-client
 
     # NAS

@@ -10,6 +10,7 @@ in
     ./modules/plex.nix
     ./modules/watch.nix
     ./modules/blyatclicker.nix
+    ./modules/epic.nix
   ];
 
   options.modules.nginx = {

@@ -37,7 +37,6 @@
       plexxGid = toString config.users.groups.plex.gid;
     };
     samba-client.enable = false;
-    freegames.enable = true;
   };
 
   modules.nginx = {
@@ -46,6 +45,7 @@
     plex.enable = true; # Port 81
     watch.enable = true; # Port 82
     blyatclicker.enable = true; # Port 83
+    epic.enable = true; # Port 84
   };
 
   # Enable hardware acceleration for on iGPU
