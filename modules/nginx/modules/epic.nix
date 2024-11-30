@@ -40,6 +40,8 @@ in
       };
     };
 
+    networking.firewall.allowedTCPPorts = [ 3000 ];
+
     virtualisation.oci-containers.backend = "docker";
     virtualisation.oci-containers.containers = {
       # https://hub.docker.com/r/charlocharlie/epicgames-freegames
