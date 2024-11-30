@@ -48,7 +48,7 @@
     { mountPoint = "/media/MiniPCSchijf";
       device = "/dev/disk/by-uuid/98943bb3-29f6-48e5-a912-354b06993122";
       fsType = "ext4";
-      options = ["nofail"];
+      options = ["nofail" "uid=${toString config.users.users.plex.uid }" "gid=${toString config.users.groups.plex.gid}" ];
       #options = [ "x-systemd.automount" "noauto" "uid=${toString config.users.users.plex.uid }" "gid=${toString config.users.groups.plex.gid}"];
     };
 
