@@ -28,8 +28,8 @@
     cloudflared.enable = true;
     plexx = {
       enable = true;
-      plexxUid = toString config.users.users.plex.uid;
-      plexxGid = toString config.users.groups.plex.gid;
+      plexxUid = toString config.users.users.thijs.uid;
+      plexxGid = toString config.users.groups.thijs.gid;
       downloadPath = "/media/plexmedia/downloads";
       moviePath = "/media/MiniPCSchijf/Films";
       seriesPath = "/media/MiniPCSchijf/Series";
@@ -48,7 +48,7 @@
     { mountPoint = "/media/MiniPCSchijf";
       device = "/dev/disk/by-uuid/98943bb3-29f6-48e5-a912-354b06993122";
       fsType = "ext4";
-      options = ["nofail" "uid=${toString config.users.users.plex.uid }" "gid=${toString config.users.groups.plex.gid}" ];
+      options = ["nofail"];
       #options = [ "x-systemd.automount" "noauto" "uid=${toString config.users.users.plex.uid }" "gid=${toString config.users.groups.plex.gid}"];
     };
 
