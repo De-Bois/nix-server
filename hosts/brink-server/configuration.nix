@@ -44,9 +44,9 @@
   #  options = [ "username=bois" "password=bois" "x-systemd.automount" "noauto" "uid=${toString config.users.users.plex.uid }" "gid=${toString config.users.groups.plex.gid}"];
   #};
 
-  fileSystems."ExterneSchijf6TB" =
+  fileSystems."MiniPCSchijf" =
     { mountPoint = "/media/MiniPCSchijf";
-      device = "/dev/disk/by-uuid/98943bb3-29f6-48e5-a912-354b06993122";
+      device = "/dev/sda1";
       fsType = "ext4";
       options = [ "x-systemd.automount" "noauto" "uid=${toString config.users.users.plex.uid }" "gid=${toString config.users.groups.plex.gid}"];
     };
