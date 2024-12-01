@@ -29,7 +29,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    networking.firewall.allowedTCPPorts = [ port 3000 ];
+    networking.firewall.allowedTCPPorts = [ port ];
     services.nginx.virtualHosts."${serverName}" = {
         inherit serverName;
         listen = [{ inherit port; addr="0.0.0.0"; ssl=enableSSL; }];
