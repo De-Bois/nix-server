@@ -37,6 +37,7 @@
       plexxGid = toString config.users.groups.plex.gid;
     };
     samba-client.enable = false;
+    jellyfin.enable = true;
   };
 
   modules.nginx = {
@@ -50,7 +51,7 @@
 
   # Enable hardware acceleration for on iGPU
   # https://nixos.wiki/wiki/Accelerated_Video_Playback
-  hardware.opengl = { 
+  hardware.graphics = { 
     enable = true;
     extraPackages = with pkgs; [
       intel-media-driver 
