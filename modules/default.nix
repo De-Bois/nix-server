@@ -21,6 +21,7 @@
     ./plex
     ./plexx
     ./samba-client
+    ./jellyfin
 
     # NAS
     ./bois-nas
