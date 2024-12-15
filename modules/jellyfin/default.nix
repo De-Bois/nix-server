@@ -1,4 +1,4 @@
-{ inputs, pkgs, lib, config, system, ... }:
+{ inputs, pkgs, lib, config, ... }:
 
 with lib; let
   cfg = config.modules.jellyfin;
@@ -8,7 +8,7 @@ with lib; let
     (import ./plugins/intro-skipper.nix)
   ];
 
-  # pkgs = import inputs.nixpkgs { inherit config system; overlays = overlays; };
+  pkgs = import inputs.nixpkgs { inherit config; overlays = overlays; };
 in {
   imports = [
     ./jellperr
