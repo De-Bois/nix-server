@@ -4,9 +4,8 @@ with lib; let
   cfg = config.modules.jellyfin;
 
   # overlays
-  overlays = [
+  overlays = with pkgs; [
     (import ./plugins/intro-skipper.nix)
-
   ];
 
 in {
