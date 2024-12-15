@@ -154,19 +154,19 @@ in {
         dependsOn = [ "vpn" "qbittorrent" "prowlarr" ];
       };
 
-      # # https://hub.docker.com/r/fallenbagel/jellyseerr
-      # "jellyseerr" = {
-      #   image = "fallenbagel/jellyseerr:latest";
-      #   extraOptions = [ "--network=host" ];
-      #   volumes = [ 
-      #     "${etc-path}/jellyseerr:/app/config" 
-      #   ];
-      #   environment = {
-      #     "LOG_LEVEL"="debug";
-      #     "TZ" = "Europe/Amsterdam";
-      #   };
-      #   dependsOn = [ "vpn" "radarr" "sonarr" ];
-      # };
+      # https://hub.docker.com/r/fallenbagel/jellyseerr
+      "jellyseerr" = {
+        image = "fallenbagel/jellyseerr:latest";
+        extraOptions = [ "--network=host" ];
+        volumes = [ 
+          "${etc-path}/jellyseerr:/app/config" 
+        ];
+        environment = {
+          "LOG_LEVEL"="debug";
+          "TZ" = "Europe/Amsterdam";
+        };
+        dependsOn = [ "vpn" "radarr" "sonarr" ];
+      };
 
       # # https://hub.docker.com/r/fallenbagel/jellyseerr
       # "jellyseerr" = {
