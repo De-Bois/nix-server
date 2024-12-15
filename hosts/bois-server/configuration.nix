@@ -55,6 +55,7 @@
     watch.enable = true; # Port 82
     blyatclicker.enable = true; # Port 83
     epic.enable = true; # Port 84
+    jf.enable = true; # Port 86
   };
 
   # Enable hardware acceleration for on iGPU
