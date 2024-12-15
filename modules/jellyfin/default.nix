@@ -13,7 +13,7 @@ with lib; let
           owner = "Fallenbagel";
           repo = "jellyseerr";
           rev = "v2.1.0";
-          sha256 = "";
+          sha256 = "sha256-5kaeqhjUy9Lgx4/uFcGRlAo+ROEOdTWc2m49rq8R8Hs=";
         };
       });
     })
