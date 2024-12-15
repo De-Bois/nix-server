@@ -1,7 +1,7 @@
 (
   final: prev:
     {
-      jellyfin-web = prev.pkgs.jellyfin-web.overrideAttrs (finalAttrs: previousAttrs: {
+      pkgs.jellyfin-web = prev.jellyfin-web.overrideAttrs (finalAttrs: previousAttrs: {
         installPhase = ''
           runHook preInstall
 
