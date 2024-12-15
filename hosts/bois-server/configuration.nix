@@ -32,13 +32,18 @@
     bois-nas.enable = true;
     plex.enable = true;
     plexx = {
-      enable = true;
+      enable = false;
       plexxUid = toString config.users.users.plex.uid;
       plexxGid = toString config.users.groups.plex.gid;
     };
     jellyfin = {
       enable = true;
       user = "plex";
+      jellperr = {
+        enable = true;
+        jellperrUid = toString config.users.users.plex.uid;
+        jellperrGid = toString config.users.groups.plex.gid;
+      };
     };
     samba-client.enable = false;
   };

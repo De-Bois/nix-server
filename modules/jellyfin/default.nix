@@ -2,7 +2,18 @@
 
 with lib; let
   cfg = config.modules.jellyfin;
+
+  # overlays
+  overlays = [
+    (import ./plugins/intro-skipper.nix)
+
+  ];
+
 in {
+  imports = [
+    ./jellperr
+  ];
+
   options = {
     modules.jellyfin = {
       enable = mkEnableOption "Jellyfin media server";
@@ -16,6 +27,8 @@ in {
   };
 
   config = mkIf cfg.enable {
+    pkgs.overlays = overlays;
+
     services.jellyfin = {
       enable = true;
       openFirewall = true;
