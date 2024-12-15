@@ -7,16 +7,16 @@ with lib; let
   overlays = [
     (import ./plugins/intro-skipper.nix)
 
-    (final: prev: {
-      jellyseerr = prev.jellyseerr.overrideAttrs (old: {
-        src = prev.fetchFromGitHub {
-          owner = "Fallenbagel";
-          repo = "jellyseerr";
-          rev = "v2.1.0";
-          sha256 = "sha256-5kaeqhjUy9Lgx4/uFcGRlAo+ROEOdTWc2m49rq8R8Hs=";
-        };
-      });
-    })
+    # (final: prev: {
+    #   jellyseerr = prev.jellyseerr.overrideAttrs (old: {
+    #     src = prev.fetchFromGitHub {
+    #       owner = "Fallenbagel";
+    #       repo = "jellyseerr";
+    #       rev = "v2.1.0";
+    #       sha256 = "sha256-5kaeqhjUy9Lgx4/uFcGRlAo+ROEOdTWc2m49rq8R8Hs=";
+    #     };
+    #   });
+    # })
   ];
 
   pkgs = import inputs.nixpkgs { inherit system overlays;};
@@ -45,16 +45,16 @@ in {
         user = cfg.user;
       };
     
-      jellyseerr = {
-        enable = true;
-        package = pkgs.jellyseerr;
-        openFirewall = true;
-      };
+      # jellyseerr = {
+      #   enable = true;
+      #   package = pkgs.jellyseerr;
+      #   openFirewall = true;
+      # };
     };
 
     environment.systemPackages = with pkgs; [
       jellyfin
-      jellyseerr
+      # jellyseerr
     ];
   };
 }
