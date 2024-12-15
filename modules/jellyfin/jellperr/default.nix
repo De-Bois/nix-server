@@ -157,6 +157,20 @@ in {
       # # https://hub.docker.com/r/fallenbagel/jellyseerr
       # "jellyseerr" = {
       #   image = "fallenbagel/jellyseerr:latest";
+      #   extraOptions = [ "--network=host" ];
+      #   volumes = [ 
+      #     "${etc-path}/jellyseerr:/app/config" 
+      #   ];
+      #   environment = {
+      #     "LOG_LEVEL"="debug";
+      #     "TZ" = "Europe/Amsterdam";
+      #   };
+      #   dependsOn = [ "vpn" "radarr" "sonarr" ];
+      # };
+
+      # # https://hub.docker.com/r/fallenbagel/jellyseerr
+      # "jellyseerr" = {
+      #   image = "fallenbagel/jellyseerr:latest";
       #   # https://stackoverflow.com/questions/24319662/from-inside-of-a-docker-container-how-do-i-connect-to-the-localhost-of-the-mach
       #   extraOptions = [ "--network=container:vpn" ];
       #   # extraOptions = [ "--network=container:vpn" "--add-host=host.docker.internal:host-gateway" ];
