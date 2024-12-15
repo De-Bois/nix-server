@@ -9,7 +9,7 @@ with lib; let
 
     (final: prev: {
       jellyseerr = prev.jellyseerr.overrideAttrs (old: {
-        src = builtins.fetchFromGitHub {
+        src = prev.fetchFromGitHub {
           owner = "Fallenbagel";
           repo = "jellyseerr";
           rev = "v2.1.0";
