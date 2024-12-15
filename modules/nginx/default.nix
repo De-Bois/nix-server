@@ -11,6 +11,7 @@ in
     ./modules/watch.nix
     ./modules/blyatclicker.nix
     ./modules/epic.nix
+    ./modules/jf.nix
   ];
 
   options.modules.nginx = {
