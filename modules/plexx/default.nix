@@ -204,9 +204,9 @@ in {
           "GUID" = cfg.plexxGid;
           "TZ" = "Europe/Amsterdam";
         };
-        serviceConfig = {
-          TimeoutStopSec = "1s";
-        };
+        # serviceConfig = {
+        #   TimeoutStopSec = "1s";
+        # };
         dependsOn = [ "vpn" "radarr" "sonarr" "overseerr" ];
       };
     };
