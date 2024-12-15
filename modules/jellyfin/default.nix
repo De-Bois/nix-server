@@ -9,7 +9,7 @@ with lib; let
   ];
 
   pkgs = import inputs.nixpkgs { 
-    inherit config system;
+    inherit system;
     overlays = overlays;
   };
 in {
