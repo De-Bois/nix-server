@@ -10,7 +10,7 @@ with lib; let
 
   pkgs = import inputs.nixpkgs { 
     inherit config; 
-    system = inputs.pkgs.system; 
+    system = inputs.nixpkgs.system; 
     overlays = overlays;
   };
 in {
