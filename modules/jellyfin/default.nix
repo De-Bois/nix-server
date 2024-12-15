@@ -26,7 +26,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    pkgs.overlays = with pkgs; overlays;
+    # pkgs.overlays = with pkgs; overlays;
 
     services.jellyfin = {
       enable = true;
