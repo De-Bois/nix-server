@@ -157,7 +157,7 @@ in {
       # https://hub.docker.com/r/fallenbagel/jellyseerr
       "jellyseerr" = {
         image = "fallenbagel/jellyseerr:latest";
-        # extraOptions = [ "--network=container:vpn" ];
+        extraOptions = [ "--network=container:vpn" ];
         volumes = [ 
           "${etc-path}/jellyseerr:/app/config" 
         ];
