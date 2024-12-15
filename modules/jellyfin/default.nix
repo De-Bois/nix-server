@@ -1,4 +1,4 @@
-{ inputs, lib, config, ... }:
+{ inputs, system, lib, config, ... }:
 
 with lib; let
   cfg = config.modules.jellyfin;
@@ -9,8 +9,7 @@ with lib; let
   ];
 
   pkgs = import inputs.nixpkgs { 
-    inherit config; 
-    system = inputs.nixpkgs.system; 
+    inherit config system;
     overlays = overlays;
   };
 in {

@@ -14,7 +14,7 @@
         nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { 
-            inherit inputs; 
+            inherit inputs system; 
             pkgs = import packages { 
               inherit system; 
               config = { allowUnfree = true; }; 
