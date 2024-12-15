@@ -91,9 +91,9 @@ in {
         environmentFiles = [ 
           "${config.sops.secrets.wireguard_key.path}"
         ];
-        serviceConfig = {
-          TimeoutStopSec = "1s";
-        };
+        # serviceConfig = {
+        #   TimeoutStopSec = "1s";
+        # };
       };
 
       # https://hub.docker.com/r/linuxserver/qbittorrent
@@ -111,9 +111,9 @@ in {
           "WEBUI_PORT" = "8090";
           # "TORRENTING_PORT" = "6881";
         };
-        serviceConfig = {
-          TimeoutStopSec = "1s";
-        };
+        # serviceConfig = {
+        #   TimeoutStopSec = "1s";
+        # };
         dependsOn = [ "vpn" ];
       };
 
@@ -129,9 +129,9 @@ in {
           "GUID" = cfg.plexxGid;
           "TZ" = "Europe/Amsterdam";
         };
-        serviceConfig = {
-          TimeoutStopSec = "1s";
-        };
+        # serviceConfig = {
+        #   TimeoutStopSec = "1s";
+        # };
         dependsOn = [ "vpn" ];
       };
 
@@ -149,9 +149,9 @@ in {
           "GUID" = cfg.plexxGid;
           "TZ" = "Europe/Amsterdam";
         };
-        serviceConfig = {
-          TimeoutStopSec = "1s";
-        };
+        # serviceConfig = {
+        #   TimeoutStopSec = "1s";
+        # };
         dependsOn = [ "vpn" "qbittorrent" "prowlarr" ];
       };
 
@@ -168,9 +168,9 @@ in {
           "GUID" = cfg.plexxGid;
           "TZ" = "Europe/Amsterdam";
         };
-        serviceConfig = {
-          TimeoutStopSec = "1s";
-        };
+        # serviceConfig = {
+        #   TimeoutStopSec = "1s";
+        # };
         dependsOn = [ "vpn" "qbittorrent" "prowlarr" ];
       };
 
@@ -186,9 +186,9 @@ in {
           "GUID" = cfg.plexxGid;
           "TZ" = "Europe/Amsterdam";
         };
-        serviceConfig = {
-          TimeoutStopSec = "1s";
-        };
+        # serviceConfig = {
+        #   TimeoutStopSec = "1s";
+        # };
         dependsOn = [ "vpn" "radarr" "sonarr" ];
       };
 
