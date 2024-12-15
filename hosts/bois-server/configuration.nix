@@ -36,8 +36,11 @@
       plexxUid = toString config.users.users.plex.uid;
       plexxGid = toString config.users.groups.plex.gid;
     };
+    jellyfin = {
+      enable = true;
+      user = "plex";
+    };
     samba-client.enable = false;
-    jellyfin.enable = true;
   };
 
   modules.nginx = {

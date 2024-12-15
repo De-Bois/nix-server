@@ -6,6 +6,12 @@ in {
   options = {
     modules.jellyfin = {
       enable = mkEnableOption "Jellyfin media server";
+
+      user = mkOption {
+        type = types.str;
+        default = "jellyfin";
+        description = "The user to run the Jellyfin service as";
+      };
     };
   };
 
@@ -13,7 +19,11 @@ in {
     services.jellyfin = {
       enable = true;
       openFirewall = true;
-      user = "plex";
-    };    
+      user = cfg.user;
+    };
+
+    environment.systemPackages = with pkgs; [
+      jellyfin
+    ];
   };
 }
