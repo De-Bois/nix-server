@@ -51,6 +51,11 @@ in {
   };
 
   config = mkIf cfg.enable {
+    services.jellyseerr = {
+      enable = true;
+      openFirewall = true;
+    };
+
     virtualisation.oci-containers.backend = "docker";
     virtualisation.oci-containers.containers = {
       # https://hub.docker.com/r/qmcgaw/gluetun
@@ -154,23 +159,21 @@ in {
         dependsOn = [ "vpn" "qbittorrent" "prowlarr" ];
       };
 
-      # https://hub.docker.com/r/fallenbagel/jellyseerr
-      "jellyseerr" = {
-        image = "fallenbagel/jellyseerr:latest";
-        # extraOptions = [ "--network=container:vpn" "--add-host=host.docker.internal:host-gateway" ];
-        volumes = [ 
-          "${etc-path}/jellyseerr:/app/config" 
-        ];
-        environment = {
-          "LOG_LEVEL"="debug";
-          "TZ" = "Europe/Amsterdam";
-        };
-        dependsOn = [ "vpn" "radarr" "sonarr" ];
-      };
-# 172.17.0.1
-# extra_hosts:
-#    - "host.docker.internal     :host-gateway"
-
+      # # https://hub.docker.com/r/fallenbagel/jellyseerr
+      # "jellyseerr" = {
+      #   image = "fallenbagel/jellyseerr:latest";
+      #   # https://stackoverflow.com/questions/24319662/from-inside-of-a-docker-container-how-do-i-connect-to-the-localhost-of-the-mach
+      #   extraOptions = [ "--network=container:vpn" ];
+      #   # extraOptions = [ "--network=container:vpn" "--add-host=host.docker.internal:host-gateway" ];
+      #   volumes = [ 
+      #     "${etc-path}/jellyseerr:/app/config" 
+      #   ];
+      #   environment = {
+      #     "LOG_LEVEL"="debug";
+      #     "TZ" = "Europe/Amsterdam";
+      #   };
+      #   dependsOn = [ "vpn" "radarr" "sonarr" ];
+      # };
 
       # # https://github.com/Schaka/janitorr
       # "janitorr" = {
