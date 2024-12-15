@@ -4,7 +4,7 @@ with lib; let
   cfg = config.modules.jellyfin;
 
   # overlays
-  overlays = with pkgs; [
+  overlays = [
     (import ./plugins/intro-skipper.nix)
   ];
 
@@ -26,7 +26,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    pkgs.overlays = overlays;
+    pkgs.overlays = with pkgs; overlays;
 
     services.jellyfin = {
       enable = true;
