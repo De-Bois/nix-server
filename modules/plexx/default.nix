@@ -193,7 +193,7 @@ in {
       };
 
       # https://hub.docker.com/r/jorenn92/maintainerr
-      "mainainerr" = {
+      "maintainerr" = {
         image = "ghcr.io/jorenn92/maintainerr:latest";
         extraOptions = [ "--network=container:vpn" ];
         volumes = [ 
