@@ -47,12 +47,14 @@ in {
     
       jellyseerr = {
         enable = true;
+        package = pkgs.jellyseerr;
         openFirewall = true;
       };
     };
 
     environment.systemPackages = with pkgs; [
       jellyfin
+      jellyseerr
     ];
   };
 }
