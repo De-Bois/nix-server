@@ -8,7 +8,7 @@ with lib; let
     (import ./plugins/intro-skipper.nix)
   ];
 
-  # pkgs = import inputs.nixpkgs { inherit config; overlays = overlays; };
+  pkgs = import inputs.nixpkgs { inherit config; system = pkgs.system; overlays = overlays; };
 in {
   imports = [
     ./jellperr
