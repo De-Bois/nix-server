@@ -157,7 +157,7 @@ in {
       # https://hub.docker.com/r/fallenbagel/jellyseerr
       "jellyseerr" = {
         image = "fallenbagel/jellyseerr:latest";
-        extraOptions = [ "--network=container:vpn" ];
+        extraOptions = [ "--network=container:vpn" "--add-host host.docker.internal:host-gateway" ];
         volumes = [ 
           "${etc-path}/jellyseerr:/app/config" 
         ];
@@ -167,6 +167,10 @@ in {
         };
         dependsOn = [ "vpn" "radarr" "sonarr" ];
       };
+# 172.17.0.1
+# extra_hosts:
+#    - "host.docker.internal     :host-gateway"
+
 
       # # https://github.com/Schaka/janitorr
       # "janitorr" = {
