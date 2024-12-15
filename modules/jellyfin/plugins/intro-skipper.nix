@@ -1,4 +1,4 @@
-with pkgs; (
+( with pkgs;
   final: prev:
     {
       jellyfin-web = prev.jellyfin-web.overrideAttrs (finalAttrs: previousAttrs: {
