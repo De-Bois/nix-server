@@ -8,7 +8,7 @@ with lib; let
     (import ./plugins/intro-skipper.nix)
   ];
 
-  pkgs = import inputs.nixpkgs { inherit config system; overlays = overlays; };
+  # pkgs = import inputs.nixpkgs { inherit config system; overlays = overlays; };
 in {
   imports = [
     ./jellperr
@@ -27,7 +27,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-
     services.jellyfin = {
       enable = true;
       openFirewall = true;
