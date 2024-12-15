@@ -51,11 +51,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    services.jellyseerr = {
-      enable = true;
-      openFirewall = true;
-    };
-
     virtualisation.oci-containers.backend = "docker";
     virtualisation.oci-containers.containers = {
       # https://hub.docker.com/r/qmcgaw/gluetun

@@ -6,6 +6,17 @@ with lib; let
   # overlays
   overlays = [
     (import ./plugins/intro-skipper.nix)
+
+    (final: prev: {
+      jellyseerr = prev.jellyseerr.overrideAttrs (old: {
+        src = fetchFromGitHub {
+          owner = "Fallenbagel";
+          repo = "jellyseerr";
+          rev = "v2.1.0";
+          sha256 = "";
+        };
+      });
+    })
   ];
 
   pkgs = import inputs.nixpkgs { inherit system overlays;};
@@ -27,10 +38,17 @@ in {
   };
 
   config = mkIf cfg.enable {
-    services.jellyfin = {
-      enable = true;
-      openFirewall = true;
-      user = cfg.user;
+    services = {
+      jellyfin = {
+        enable = true;
+        openFirewall = true;
+        user = cfg.user;
+      };
+    
+      jellyseerr = {
+        enable = true;
+        openFirewall = true;
+      };
     };
 
     environment.systemPackages = with pkgs; [
