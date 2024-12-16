@@ -53,6 +53,18 @@
       #options = [ "x-systemd.automount" "noauto" "uid=${toString config.users.users.plex.uid }" "gid=${toString config.users.groups.plex.gid}"];
     };
 
+  fileSystems."/mnt/StoragePool" =
+  {
+    device = "StoragePool";
+    fsType = "zfs";
+  };
+
+fileSystems."/mnt/StoragePool/Media" =
+  {
+    device = "StoragePool/Media";
+    fsType = "zfs";
+  };
+
 
 
   
