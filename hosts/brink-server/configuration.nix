@@ -32,8 +32,8 @@
       plexxUid = toString config.users.users.thijs.uid;
       plexxGid = toString config.users.groups.users.gid;
       downloadPath = "/media/plexmedia/downloads";
-      moviePath = "/media/MiniPCSchijf/Films";
-      seriesPath = "/media/MiniPCSchijf/Series";
+      moviePath = "/mnt/StoragePool/Media/Films";
+      seriesPath = "/mnt/StoragePool/Media/Series";
     };
         
   };
