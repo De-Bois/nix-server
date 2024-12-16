@@ -57,12 +57,14 @@
   {
     device = "StoragePool";
     fsType = "zfs";
+    options = ["nofail"];
   };
 
 fileSystems."/mnt/StoragePool/Media" =
   {
     device = "StoragePool/Media";
     fsType = "zfs";
+    options = ["nofail"];
   };
 
 
