@@ -22,6 +22,7 @@
     owner = "plex";
    };
 
+  
   modules = {
     ssh.enable = true;
     plex.enable = true;
@@ -63,4 +64,9 @@
     initialPassword = "hello";
     uid = 1000;   
   };
+
+  boot.supportedFilesystems = [ "zfs" ];
+  boot.zfs.forceImportRoot = false;
+  networking.hostId = "44779f7c";
+
 }
