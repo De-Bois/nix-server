@@ -44,6 +44,7 @@
     #panel.enable = true; # Port 443
     plex.enable = true; # Port 81
     watch.enable = true; # Port 82
+    domainName = "hubclup.nl";
     #blyatclicker.enable = true; # Port 83
     #epic.enable = true; # Port 84
     #jf.enable = true; # Port 86
