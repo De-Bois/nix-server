@@ -32,7 +32,7 @@
     bois-nas.enable = true;
     plex.enable = true;
     plexx = {
-      enable = false;
+      enable = true;
       plexxUid = toString config.users.users.plex.uid;
       plexxGid = toString config.users.groups.plex.gid;
     };
@@ -40,7 +40,7 @@
       enable = true;
       user = "plex";
       jellperr = {
-        enable = true;
+        enable = false;
         jellperrUid = toString config.users.users.plex.uid;
         jellperrGid = toString config.users.groups.plex.gid;
       };
