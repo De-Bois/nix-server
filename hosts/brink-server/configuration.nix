@@ -27,6 +27,7 @@
     ssh.enable = true;
     plex.enable = true;
     cloudflared.enable = true;
+    nginx.enable = true;
     plexx = {
       enable = true;
       plexxUid = toString config.users.users.thijs.uid;
@@ -38,6 +39,15 @@
         
   };
 
+  modules.nginx = {
+    #index.enable = true; # Port 85
+    #panel.enable = true; # Port 443
+    plex.enable = true; # Port 81
+    watch.enable = true; # Port 82
+    #blyatclicker.enable = true; # Port 83
+    #epic.enable = true; # Port 84
+    #jf.enable = true; # Port 86
+  };
   #fileSystems."MiniPCSchijf" = {
   #  mountPoint = "/media/MiniPCSchijf";
   #  device = "//192.168.1.14/Media";
