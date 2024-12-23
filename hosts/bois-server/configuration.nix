@@ -46,6 +46,7 @@
       };
     };
     samba-client.enable = false;
+    ghostfolio.enable = false;
   };
 
   modules.nginx = {

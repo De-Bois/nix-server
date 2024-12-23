@@ -22,6 +22,7 @@
     ./plexx
     ./samba-client
     ./jellyfin
+    ./ghostfolio
 
     # NAS
     ./bois-nas
