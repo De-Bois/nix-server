@@ -20,7 +20,7 @@
     wireguard_key.owner = "plex";
     ghostfolio = {
       sopsFile = ../../secrets/ghostfolio.env;
-      format = "env";
+      format = "dotenv";
     };
   };
 
