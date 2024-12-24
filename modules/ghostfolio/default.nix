@@ -39,6 +39,7 @@ in {
 
       "postgres" = {
         image = "docker.io/library/postgres:15";
+        hostname = "postgres";
         extraOptions = [
           "--cap-drop=ALL"
           "--cap-add=CHOWN"
