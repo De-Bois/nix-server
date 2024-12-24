@@ -64,7 +64,7 @@ in {
         environmentFiles = [ 
           "${config.sops.secrets.ghostfolio.path}"
         ];
-        cmd = [ "redis-server" "--requirepass" "''${REDIS_PASSWORD}" ];
+        cmd = [ "redis-server" "--requirepass" "''\${REDIS_PASSWORD}" ];
       };
     };
   };
