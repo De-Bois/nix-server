@@ -10,6 +10,8 @@ in {
   };
 
   config = mkIf cfg.enable {
+    networking.firewall.allowedTCPPorts = [ 3333 5432 6379 ];
+    
     virtualisation.oci-containers.backend = "docker";
     virtualisation.oci-containers.containers = {
       # https://github.com/ghostfolio/ghostfolio
