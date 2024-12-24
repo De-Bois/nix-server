@@ -18,7 +18,10 @@
   sops.secrets = {
     cloudflared_token.owner = "cloudflared";
     wireguard_key.owner = "plex";
-    ghostfolio.owner = "bois";
+    ghostfolio = {
+      sopsFile = ../../secrets/ghostfolio.env;
+      format = "env";
+    };
   };
 
   modules = {
