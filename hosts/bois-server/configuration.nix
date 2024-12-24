@@ -15,13 +15,11 @@
   sops.defaultSopsFormat = "yaml";
   sops.age.keyFile = "/etc/sops-age-key.txt";
   
-  sops.secrets.cloudflared_token = {
-    owner = "cloudflared";
-   };
-
-  sops.secrets.wireguard_key = {
-    owner = "plex";
-   };
+  sops.secrets = {
+    cloudflared_token.owner = "cloudflared";
+    wireguard_key.owner = "plex";
+    # ghostfolio-env.owner = "";
+  };
 
   modules = {
     tmux = { enable = true; plugins = [pkgs.tmuxPlugins.better-mouse-mode]; };
