@@ -73,9 +73,9 @@ in {
         volumes = [
           "/etc/ghostfolio/postgres:/var/lib/postgresql/data"
         ];
-        ports = [
-          "5432:5432"
-        ];
+        # ports = [
+        #   "5432:5432"
+        # ];
       };
 
       "redis" = {
