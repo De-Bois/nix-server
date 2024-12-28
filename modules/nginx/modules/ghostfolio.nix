@@ -8,7 +8,7 @@ let
   enableSSL = cfg.enableSSL;
 in
 {
-  options.modules.ghostfolio.${name} = {
+  options.modules.nginx.${name} = {
     enable = mkEnableOption "Enable ${name}";
 
     port = mkOption {
