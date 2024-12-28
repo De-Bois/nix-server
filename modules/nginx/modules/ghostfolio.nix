@@ -29,7 +29,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    ghostfolio.enable = true;
+    modules.ghostfolio.enable = true;
 
     networking.firewall.allowedTCPPorts = [ port ];
     services.nginx.virtualHosts."${serverName}" = {
