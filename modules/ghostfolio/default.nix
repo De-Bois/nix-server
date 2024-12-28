@@ -10,8 +10,8 @@ in {
   };
 
   config = mkIf cfg.enable {
-    networking.firewall.allowedTCPPorts = [ 3333 5432 6379 ];
-    
+    # networking.firewall.allowedTCPPorts = [ 3333 5432 6379 ];
+
     systemd.services.init-ghostfolio-network = {
       description = "Create the network bridge for ghostfolio.";
       after = [ "network.target" ];
@@ -73,9 +73,6 @@ in {
         volumes = [
           "/etc/ghostfolio/postgres:/var/lib/postgresql/data"
         ];
-        # ports = [
-        #   "5432:5432"
-        # ];
       };
 
       "redis" = {
