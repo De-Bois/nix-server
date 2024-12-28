@@ -9,7 +9,7 @@ Update the Pelican panel in ```/var/www/pelican``` with ```sudo pelican-update``
 Update the bois webpage with ```sudo cp /home/bois/nix-server/boishome/* /var/www/thebois.nl/ -r```.
 
 # Docker
-Enter container as root: ```docker exec -ti <name> bash```
+Enter container as root: ```docker exec -ti <name> sh```
 
 # To-Do: 
 - [X] Backup server files 
