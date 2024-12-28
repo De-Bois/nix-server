@@ -12,6 +12,7 @@ in
     ./modules/blyatclicker.nix
     ./modules/epic.nix
     ./modules/jf.nix
+    ./modules/ghostfolio.nix
   ];
 
   options.modules.nginx = {
