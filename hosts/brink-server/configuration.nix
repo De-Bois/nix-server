@@ -43,10 +43,9 @@
   services.nextcloud = {
     enable = true;
     package = pkgs.nextcloud28;
-    hostName = "localhost";
+    hostName = "192.168.1.100";
     config.adminpassFile = "/etc/nextcloud-admin-pass";
     config.dbtype = "sqlite";
-    trusted_domains = ["192.168.1.100"];
   };
 
   modules.nginx = {
