@@ -47,7 +47,6 @@
     config.adminpassFile = "/etc/nextcloud-admin-pass";
     config.dbtype = "sqlite";
     trusted_domains = [192.168.1.100];
-    }
   };
 
   modules.nginx = {
