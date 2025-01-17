@@ -39,6 +39,15 @@
         
   };
 
+  environment.etc."nextcloud-admin-pass".text = "DitIsEenTest";
+  services.nextcloud = {
+    enable = true;
+    package = pkgs.nextcloud28;
+    hostName = "localhost";
+    config.adminpassFile = "/etc/nextcloud-admin-pass";
+    config.dbtype = "sqlite";
+  };
+
   modules.nginx = {
     #index.enable = true; # Port 85
     #panel.enable = true; # Port 443
