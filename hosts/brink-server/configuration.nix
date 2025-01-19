@@ -28,6 +28,7 @@
     plex.enable = true;
     cloudflared.enable = true;
     nginx.enable = true;
+    nextcloud.enable = true;
     plexx = {
       enable = true;
       plexxUid = toString config.users.users.thijs.uid;
@@ -39,16 +40,7 @@
         
   };
 
-  environment.etc."nextcloud-admin-pass".text = "DitIsEenTest";
-  services.nextcloud = {
-    enable = true;
-    package = pkgs.nextcloud28;
-    hostName = "192.168.1.100";
-    config.adminpassFile = "/etc/nextcloud-admin-pass";
-    config.dbtype = "sqlite";
-    https = true;
-    datadir = "/mnt/StoragePool/Media/NextCloud";
-  };
+ 
 
   modules.nginx = {
     #index.enable = true; # Port 85

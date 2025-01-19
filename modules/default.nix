@@ -25,5 +25,8 @@
 
     # NAS
     ./bois-nas
+
+    #nextcloud
+    ./nextcloud
     ];
 }
