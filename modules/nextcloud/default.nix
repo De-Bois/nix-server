@@ -19,5 +19,5 @@ config = mkIf cfg.enable {
             https = true;
             datadir = "/mnt/StoragePool/Media/NextCloud";
         };
-    }
+    };
 }
