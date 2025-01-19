@@ -22,6 +22,7 @@
     owner = "plex";
    };
 
+  environment.etc."nextcloud-admin-pass".text = "DitIsEenTest";
   
   modules = {
     ssh.enable = true;

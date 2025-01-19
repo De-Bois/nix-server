@@ -9,8 +9,7 @@ in {
     };
   };
 
-  environment.etc."nextcloud-admin-pass".text = "DitIsEenTest";
-  services.nextcloud = {
+    services.nextcloud = {
     enable = true;
     package = pkgs.nextcloud28;
     hostName = "192.168.1.100";
