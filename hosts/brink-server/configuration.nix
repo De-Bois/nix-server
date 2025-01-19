@@ -46,6 +46,8 @@
     hostName = "192.168.1.100";
     config.adminpassFile = "/etc/nextcloud-admin-pass";
     config.dbtype = "sqlite";
+    https = true;
+    home = "/mnt/StoragePool/Media/NextCloud";
   };
 
   modules.nginx = {
