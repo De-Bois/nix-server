@@ -1,6 +1,7 @@
 { inputs, pkgs, lib, config, ... }:
 
 with lib; let
+  version = "2.139.1";
   cfg = config.modules.ghostfolio;
 in {
   options = {
@@ -33,7 +34,7 @@ in {
       # https://github.com/ghostfolio/ghostfolio
       # https://docs.docker.com/reference/cli/docker/container/run/
       "ghostfolio" = {
-        image = "docker.io/ghostfolio/ghostfolio:latest";
+        image = "docker.io/ghostfolio/ghostfolio:${version}";
         extraOptions = [ 
           "--init"
           "--network=ghostfolio-bridge"
