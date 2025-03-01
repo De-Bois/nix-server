@@ -15,12 +15,12 @@ in {
     services.synapse = {
       enable = false;
       settings = {
-        server_name = config.networking.domain;
+        server_name = "thebois.nl";
         # The public base URL value must match the `base_url` value set in `clientConfig` above.
         # The default value here is based on `server_name`, so if your `server_name` is different
         # from the value of `fqdn` above, you will likely run into some mismatched domain names
         # in client applications.
-        public_baseurl = baseUrl;
+        public_baseurl = "https://synapse.thebois.nl";
         listeners = [
           { port = 8008;
             bind_addresses = [ "::1" ];
