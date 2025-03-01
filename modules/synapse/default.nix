@@ -35,19 +35,19 @@ in {
         # The default value here is based on `server_name`, so if your `server_name` is different
         # from the value of `fqdn` above, you will likely run into some mismatched domain names
         # in client applications.
-        public_baseurl = "https://synapse.thebois.nl";
-        listeners = [
-          { port = 8008;
-            bind_addresses = [ "::1" ];
-            type = "http";
-            tls = false;
-            x_forwarded = true;
-            resources = [ {
-              names = [ "client" "federation" ];
-              compress = true;
-            } ];
-          }
-        ];
+        # public_baseurl = "https://synapse.thebois.nl";
+        # listeners = [
+        #   { port = 8008;
+        #     bind_addresses = [ "::1" ];
+        #     type = "http";
+        #     tls = false;
+        #     x_forwarded = true;
+        #     resources = [ {
+        #       names = [ "client" "federation" ];
+        #       compress = true;
+        #     } ];
+        #   }
+        # ];
         database.name = "psycopg2";
       };
     };
