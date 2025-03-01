@@ -13,7 +13,7 @@ in {
     networking.firewall.allowedTCPPorts = [ 8008 8448 ];
     
     services.postgresql = {
-      enable = false;
+      enable = true;
       initialScript = pkgs.writeText "Initial-PostgreSQL-Database" ''
         CREATE ROLE "matrix-synapse";
         ALTER ROLE "asunotest" WITH LOGIN;
