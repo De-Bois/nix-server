@@ -3,7 +3,7 @@ with lib;
 let
   name = "synapse";
   cfg = config.modules.nginx.${name};
-  serverName = config.modules.nginx.domainName;
+  serverName = "${name}.${config.modules.nginx.domainName}";
   port = cfg.port;
   enableSSL = cfg.enableSSL;
 in
