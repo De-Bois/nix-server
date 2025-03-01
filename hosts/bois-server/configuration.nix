@@ -22,7 +22,7 @@
       sopsFile = ../../secrets/ghostfolio.env;
       format = "dotenv";
     };
-    synapse.owner = "matrix-synapse";
+    registration_shared_secret.owner = "matrix-synapse";
   };
 
   modules = {
