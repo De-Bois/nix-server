@@ -44,7 +44,7 @@ in {
         tls_private_key_path = "/var/lib/acme/synapse.thebois.nl/key.pem";
         listeners = [
           { # federation
-            bind_address = "";
+            bind_addresses  = [""];
             port = 8448;
             resources = [
               { compress = true; names = [ "client" "webclient" ]; }
@@ -55,7 +55,7 @@ in {
             x_forwarded = false;
           }
           { # client
-            bind_address = "127.0.0.1";
+            bind_addresses  = ["127.0.0.1"];
             port = 8008;
             resources = [
               { compress = true; names = [ "client" "webclient" ]; }
