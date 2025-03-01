@@ -10,12 +10,13 @@ in {
   };
 
   config = mkIf cfg.enable {
-    networking.firewall.allowedTCPPorts = [ 8008 ];
+    networking.firewall.allowedTCPPorts = [ 8008 8448 ];
     
     services.postgresql = {
       enable = true;
       initialScript = pkgs.writeText "Initial-PostgreSQL-Database" ''
         CREATE ROLE "matrix-synapse";
+        ALTER ROLE "asunotest" WITH LOGIN;
         CREATE DATABASE "matrix-synapse" WITH OWNER "matrix-synapse"
           TEMPLATE template0
           LC_COLLATE = "C"
