@@ -33,7 +33,7 @@ in {
       ];
       settings = {
         server_name = config.modules.nginx.domainName;
-        public_baseurl = "https://${config.modules.nginx.synapse.serverName}/";
+        public_baseurl = "https://${config.modules.nginx.chat.serverName}/";
         listeners = [
           { # federation
             bind_addresses  = [""];
