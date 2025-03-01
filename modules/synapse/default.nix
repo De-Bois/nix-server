@@ -25,9 +25,9 @@ in {
     
     services.matrix-synapse = {
       enable = true;
-      extraConfigFiles = [
-        config.sops.secrets.registration_shared_secret.path
-      ];
+      # extraConfigFiles = [
+      #   config.sops.secrets.registration_shared_secret.path
+      # ];
       settings = {
         server_name = "thebois.nl";
         # The public base URL value must match the `base_url` value set in `clientConfig` above.
