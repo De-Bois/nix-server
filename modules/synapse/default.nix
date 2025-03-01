@@ -26,7 +26,7 @@ in {
     services.matrix-synapse = {
       enable = true;
       extraConfigFiles = [
-        config.sops.secrets.cloudflared_token.path
+        config.sops.secrets.registration_shared_secret.path
       ];
       settings = {
         server_name = "thebois.nl";
