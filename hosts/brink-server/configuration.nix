@@ -22,7 +22,7 @@
     owner = "plex";
    };
 
-  environment.etc."nextcloud-admin-pass".text = "${pkgs.writeText "adminpass" "DitIsEenTest"}";
+  #environment.etc."nextcloud-admin-pass".text = "${pkgs.writeText "adminpass" "DitIsEenTest"}";
   
   modules = {
     ssh.enable = true;
