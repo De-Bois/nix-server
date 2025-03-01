@@ -12,7 +12,7 @@ in {
   config = mkIf cfg.enable {
     services.postgresql.enable = true;
     
-    services.synapse = {
+    services.matrix-synapse = {
       enable = false;
       settings = {
         server_name = "thebois.nl";
