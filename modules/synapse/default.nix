@@ -39,19 +39,32 @@ in {
         # The default value here is based on `server_name`, so if your `server_name` is different
         # from the value of `fqdn` above, you will likely run into some mismatched domain names
         # in client applications.
-        # public_baseurl = "https://synapse.thebois.nl";
-        # listeners = [
-        #   { port = 8008;
-        #     bind_addresses = [ "::1" ];
-        #     type = "http";
-        #     tls = false;
-        #     x_forwarded = true;
-        #     resources = [ {
-        #       names = [ "client" "federation" ];
-        #       compress = true;
-        #     } ];
-        #   }
-        # ];
+        public_baseurl = "https://synapse.thebois.nl/";
+        tls_certificate_path = "/var/lib/acme/synapse.thebois.nl/fullchain.pem";
+        tls_private_key_path = "/var/lib/acme/synapse.thebois.nl/key.pem";
+        listeners = [
+          { # federation
+            bind_address = "";
+            port = 8448;
+            resources = [
+              { compress = true; names = [ "client" "webclient" ]; }
+              { compress = false; names = [ "federation" ]; }
+            ];
+            tls = true;
+            type = "http";
+            x_forwarded = false;
+          }
+          { # client
+            bind_address = "127.0.0.1";
+            port = 8008;
+            resources = [
+              { compress = true; names = [ "client" "webclient" ]; }
+            ];
+            tls = false;
+            type = "http";
+            x_forwarded = true;
+          }
+        ];
         database.name = "psycopg2";
         registration_shared_secret_path = config.sops.secrets.registration_shared_secret.path;
       };

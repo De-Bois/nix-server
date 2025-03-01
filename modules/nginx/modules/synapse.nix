@@ -35,14 +35,16 @@ in
         listen = [{ inherit port; addr="0.0.0.0"; ssl=enableSSL; }];
         forceSSL = enableSSL;
         enableACME = enableSSL;
-        locations."/".extraConfig = ''
-          return 404;
-        '';
-        # Forward all Matrix API calls to the synapse Matrix homeserver. A trailing slash
-        # *must not* be used here.
-        locations."/_matrix".proxyPass = "http://[::1]:8008";
-        # Forward requests for e.g. SSO and password-resets.
-        locations."/_synapse/client".proxyPass = "http://[::1]:8008";
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:8008";
+        };
+    };
+    security.acme.certs = {
+      "synapse.thebois.nl" = {
+        group = "matrix-synapse";
+        allowKeysForGroup = true;
+        postRun = "systemctl reload nginx.service; systemctl restart matrix-synapse.service";
+      };
     };
   };
 }
