@@ -58,7 +58,7 @@ in {
             bind_addresses  = ["127.0.0.1"];
             port = 8008;
             resources = [
-              { compress = true; names = [ "client" "webclient" ]; }
+              { compress = true; names = [ "client" ]; }
             ];
             tls = false;
             type = "http";
