@@ -11,7 +11,7 @@ in {
 
   config = mkIf cfg.enable {
     services.postgresql = {
-      enable = false;
+      enable = true;
       initialScript = pkgs.writeText "Initial-PostgreSQL-Database" ''
         CREATE ROLE "matrix-synapse";
         CREATE DATABASE "matrix-synapse" WITH OWNER "matrix-synapse"
