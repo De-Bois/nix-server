@@ -17,7 +17,7 @@ config = mkIf cfg.enable {
             #config.adminpassFile = "${pkgs.writeText "adminpass" "test123"}";
             config.adminpassFile = "/etc/nextcloud-admin-pass";
             config.dbtype = "sqlite";
-            https = true;
+            #https = true;
             #home = "/var/lib/nextcloud";
             #datadir = "/mnt/StoragePool/Media/NextCloud";
         };
