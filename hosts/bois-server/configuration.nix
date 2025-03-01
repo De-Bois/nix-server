@@ -59,6 +59,7 @@
     epic.enable = true; # Port 84
     jf.enable = true; # Port 86
     ghostfolio.enable = true; # Port 87
+    synapse.enable = true; # Port 88
   };
 
   # Enable hardware acceleration for on iGPU
