@@ -22,7 +22,7 @@
       sopsFile = ../../secrets/ghostfolio.env;
       format = "dotenv";
     };
-    # registration_shared_secret.owner = "matrix-synapse";
+    registration_shared_secret.owner = "matrix-synapse";
   };
 
   modules = {
@@ -59,7 +59,7 @@
     epic.enable = true; # Port 84
     jf.enable = true; # Port 86
     ghostfolio.enable = true; # Port 87
-    synapse.enable = true; # Port 88
+    chat.enable = true; # Port 88
   };
 
   # Enable hardware acceleration for on iGPU
