@@ -25,6 +25,9 @@ in {
     
     services.matrix-synapse = {
       enable = true;
+      extraConfigFiles = [
+        config.sops.secrets.cloudflared_token.path
+      ];
       settings = {
         server_name = "thebois.nl";
         # The public base URL value must match the `base_url` value set in `clientConfig` above.
@@ -44,7 +47,6 @@ in {
             } ];
           }
         ];
-        enable_registration = true;
       };
     };
   };
