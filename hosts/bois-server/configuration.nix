@@ -48,7 +48,6 @@
       };
     };
     samba-client.enable = false;
-    synapse.enable = true;
   };
 
   modules.nginx = {

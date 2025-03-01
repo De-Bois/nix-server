@@ -10,8 +10,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    networking.firewall.allowedTCPPorts = [ 8008 8448 ];
-    
     services.postgresql = {
       enable = true;
       initialScript = pkgs.writeText "Initial-PostgreSQL-Database" ''
@@ -29,17 +27,13 @@ in {
     ];
 
     services.matrix-synapse = {
-      enable = false;
+      enable = true;
       extraConfigFiles = [
         config.sops.secrets.registration_shared_secret.path
       ];
       settings = {
-        server_name = "thebois.nl";
-        # The public base URL value must match the `base_url` value set in `clientConfig` above.
-        # The default value here is based on `server_name`, so if your `server_name` is different
-        # from the value of `fqdn` above, you will likely run into some mismatched domain names
-        # in client applications.
-        public_baseurl = "https://synapse.thebois.nl/";
+        server_name = config.modules.nginx.domainName;
+        public_baseurl = "https://${config.modules.nginx.synapse.serverName}/";
         listeners = [
           { # federation
             bind_addresses  = [""];

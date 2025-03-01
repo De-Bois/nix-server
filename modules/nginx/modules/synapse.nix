@@ -1,7 +1,7 @@
 { inputs, lib, config, pkgs, ... }:
 with lib;
 let
-  name = "synapse";
+  name = "chat";
   cfg = config.modules.nginx.${name};
   serverName = "${name}.${config.modules.nginx.domainName}";
   port = cfg.port;
@@ -29,6 +29,7 @@ in
   };
 
   config = mkIf cfg.enable {
+    modules.synapse.enable = true;
     networking.firewall.allowedTCPPorts = [ port ]; 
     services.nginx.virtualHosts."${serverName}" = {
         inherit serverName;
