@@ -14,7 +14,7 @@ in {
       enable = true;
       initialScript = pkgs.writeText "Initial-PostgreSQL-Database" ''
         CREATE ROLE "matrix-synapse";
-        ALTER ROLE "asunotest" WITH LOGIN;
+        ALTER ROLE "matrix-synapse" WITH LOGIN;
         CREATE DATABASE "matrix-synapse" WITH OWNER "matrix-synapse"
           TEMPLATE template0
           LC_COLLATE = "C"
