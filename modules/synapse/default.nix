@@ -53,6 +53,7 @@ in {
         #   }
         # ];
         database.name = "psycopg2";
+        registration_shared_secret_path = config.sops.secrets.registration_shared_secret.path;
       };
     };
   };
