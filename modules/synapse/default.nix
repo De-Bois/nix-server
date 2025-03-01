@@ -40,8 +40,6 @@ in {
         # from the value of `fqdn` above, you will likely run into some mismatched domain names
         # in client applications.
         public_baseurl = "https://synapse.thebois.nl/";
-        # tls_certificate_path = "/var/lib/acme/synapse.thebois.nl/fullchain.pem";
-        # tls_private_key_path = "/var/lib/acme/synapse.thebois.nl/key.pem";
         listeners = [
           { # federation
             bind_addresses  = [""];
@@ -67,6 +65,7 @@ in {
         ];
         database.name = "psycopg2";
         registration_shared_secret_path = config.sops.secrets.registration_shared_secret.path;
+        enable_registration = true;
       };
     };
   };

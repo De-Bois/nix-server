@@ -39,11 +39,5 @@ in
           proxyPass = "http://127.0.0.1:8008";
         };
     };
-    # security.acme.certs = {
-    #   "synapse.thebois.nl" = {
-    #     group = "matrix-synapse";
-    #     postRun = "systemctl reload nginx.service; systemctl restart matrix-synapse.service";
-    #   };
-    # };
   };
 }
