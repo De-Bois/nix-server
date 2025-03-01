@@ -16,9 +16,9 @@ config = mkIf cfg.enable {
             hostName = "192.168.1.100";
             config.adminpassFile = "/etc/nextcloud-admin-pass";
             config.dbtype = "sqlite";
-            https = true;
-            home = "/var/lib/nextcloud";
-            datadir = "/mnt/StoragePool/Media/NextCloud";
+            #https = true;
+            #home = "/var/lib/nextcloud";
+            #datadir = "/mnt/StoragePool/Media/NextCloud";
         };
     };
 }
