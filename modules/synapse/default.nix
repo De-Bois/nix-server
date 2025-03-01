@@ -47,6 +47,7 @@ in {
             } ];
           }
         ];
+        database.name = "psycopg2";
       };
     };
   };
