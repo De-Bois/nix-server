@@ -24,6 +24,10 @@ in {
       '';
     };
     
+    environment.systemPackages = with pkgs; [
+      matrix-synapse
+    ];
+
     services.matrix-synapse = {
       enable = true;
       extraConfigFiles = [
