@@ -42,6 +42,7 @@ in {
             } ];
           }
         ];
+        enable_registration = true;
       };
     };
   };
