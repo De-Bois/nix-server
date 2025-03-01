@@ -10,8 +10,30 @@ in {
   };
 
   config = mkIf cfg.enable {
+    services.postgresql.enable = true;
+    
     services.synapse = {
-      enable = true;
-    };    
+      enable = false;
+      settings = {
+        server_name = config.networking.domain;
+        # The public base URL value must match the `base_url` value set in `clientConfig` above.
+        # The default value here is based on `server_name`, so if your `server_name` is different
+        # from the value of `fqdn` above, you will likely run into some mismatched domain names
+        # in client applications.
+        public_baseurl = baseUrl;
+        listeners = [
+          { port = 8008;
+            bind_addresses = [ "::1" ];
+            type = "http";
+            tls = false;
+            x_forwarded = true;
+            resources = [ {
+              names = [ "client" "federation" ];
+              compress = true;
+            } ];
+          }
+        ];
+      };
+    };
   };
 }
