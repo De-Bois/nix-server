@@ -42,7 +42,6 @@ in
     # security.acme.certs = {
     #   "synapse.thebois.nl" = {
     #     group = "matrix-synapse";
-        
     #     postRun = "systemctl reload nginx.service; systemctl restart matrix-synapse.service";
     #   };
     # };

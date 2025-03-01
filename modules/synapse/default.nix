@@ -47,7 +47,7 @@ in {
             bind_addresses  = [""];
             port = 8448;
             resources = [
-              { compress = true; names = [ "client" "webclient" ]; }
+              { compress = true; names = [ "client" ]; }
               { compress = false; names = [ "federation" ]; }
             ];
             tls = true;
