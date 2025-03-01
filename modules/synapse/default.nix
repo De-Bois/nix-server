@@ -10,7 +10,16 @@ in {
   };
 
   config = mkIf cfg.enable {
-    services.postgresql.enable = true;
+    services.postgresql = {
+      enable = false;
+      initialScript = pkgs.writeText "Initial-PostgreSQL-Database" ''
+        CREATE ROLE "matrix-synapse";
+        CREATE DATABASE "matrix-synapse" WITH OWNER "matrix-synapse"
+          TEMPLATE template0
+          LC_COLLATE = "C"
+          LC_CTYPE = "C";
+      '';
+    };
     
     services.matrix-synapse = {
       enable = false;
