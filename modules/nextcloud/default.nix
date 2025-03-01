@@ -18,8 +18,8 @@ config = mkIf cfg.enable {
             config.adminpassFile = "/etc/nextcloud-admin-pass";
             config.dbtype = "sqlite";
             #https = true;
-            home = "/var/lib/nextcloud";
-            datadir = "/mnt/StoragePool/Media/NextCloud";
+            #home = "/var/lib/nextcloud";
+            #datadir = "/mnt/StoragePool/Media/NextCloud";
         };
     };
 }
