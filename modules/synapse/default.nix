@@ -10,6 +10,8 @@ in {
   };
 
   config = mkIf cfg.enable {
+    networking.firewall.allowedTCPPorts = [ 8008 ];
+    
     services.postgresql = {
       enable = true;
       initialScript = pkgs.writeText "Initial-PostgreSQL-Database" ''
