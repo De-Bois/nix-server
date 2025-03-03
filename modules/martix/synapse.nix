@@ -1,12 +1,10 @@
 { inputs, pkgs, lib, config, ... }:
 
 with lib; let
-  cfg = config.modules.synapse;
+  cfg = config.modules.matrix.synapse;
 in {
-  options = {
-    modules.synapse = {
-      enable = mkEnableOption "Synapse Matrix server";
-    };
+  options.modules.matrix.synapse = {
+    enable = mkEnableOption "Synapse Matrix server";
   };
 
   config = mkIf cfg.enable {
