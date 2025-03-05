@@ -9,8 +9,7 @@ in {
     };
   };
 
-  config = mkIf && config.modules.matrix.synapse.enablecfg.enable {
-
+  config = mkIf cfg.enable {
     services.mautrix-whatsapp = {
       enable = true;
       # https://github.com/element-hq/mautrix-whatsapp/blob/element-main/example-config.yaml 
