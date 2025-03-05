@@ -23,7 +23,7 @@
     ./samba-client
     ./jellyfin
     ./ghostfolio
-    ./matrix
+    ./matrix-synapse
 
     # NAS
     ./bois-nas
