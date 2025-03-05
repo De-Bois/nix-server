@@ -23,8 +23,8 @@ in {
           database = {
             type = "postgres";
             # Create database and choose one 
-            uri = "postgres://user:password@host/database?sslmode=disable";
-            uri = "postgres:///dbname?host=/var/run/postgresql";
+            # uri = "postgres://user:password@host/database?sslmode=disable";
+            # uri = "postgres:///dbname?host=/var/run/postgresql";
           };
         };
         bridge = {
