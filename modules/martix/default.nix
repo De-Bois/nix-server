@@ -3,6 +3,7 @@
 {
   imports = [
     ./synapse.nix
+    ./synapse-admin.nix
 
     ./mautrix-whatsapp.nix
   ];

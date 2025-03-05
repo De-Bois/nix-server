@@ -14,6 +14,7 @@ in
     ./modules/jf.nix
     ./modules/ghostfolio.nix
     ./modules/chat.nix
+    ./modules/chatmin.nix
   ];
 
   options.modules.nginx = {

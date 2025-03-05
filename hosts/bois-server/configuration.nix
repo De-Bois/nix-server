@@ -60,6 +60,7 @@
     jf.enable = true; # Port 86
     ghostfolio.enable = true; # Port 87
     chat.enable = true; # Port 88
+    chatmin.enable = true; # Port 89
   };
 
   # Enable hardware acceleration for on iGPU
