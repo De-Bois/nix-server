@@ -24,6 +24,8 @@ in {
       matrix-synapse
     ];
 
+    modules.matrix.synapse-admin.enable = true;
+
     services.matrix-synapse = {
       enable = true;
       extraConfigFiles = [
