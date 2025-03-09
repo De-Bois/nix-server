@@ -25,7 +25,12 @@ in {
     ];
 
     modules.matrix.synapse-admin.enable = true;
-    modules.matrix.mautrix-whatsapp.enable = true;
+    # #############################################################################
+    #
+    # Setting below is set to false!
+    #
+    # #############################################################################
+    modules.matrix.mautrix-whatsapp.enable = false;
 
     services.matrix-synapse = {
       enable = true;
