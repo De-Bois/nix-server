@@ -10,8 +10,20 @@ in {
   };
 
   config = mkIf cfg.enable {
+    services.postgresql = {
+      ensureDatabases = [ "mautrix-whatsapp" ];
+      ensureUsers = [
+        {
+          name = "mautrix-whatsapp";
+          ensureDBOwnership = true;
+          ensureClauses.login = true;
+        }
+      ];
+    };
+
     services.mautrix-whatsapp = {
       enable = true;
+      registerToSynapse = true;
       # https://github.com/element-hq/mautrix-whatsapp/blob/element-main/example-config.yaml 
       settings = {
         homeserver = {
@@ -24,14 +36,19 @@ in {
             # Create database and choose one 
             # uri = "postgres://user:password@host/database?sslmode=disable";
             # uri = "postgres:///dbname?host=/var/run/postgresql";
+            uri = "postgres:///mautrix-whatsapp?host=/var/run/postgresql";
           };
         };
         bridge = {
+          encription = {
+            allow = true;
+            default = true;
+          };
           history_sync = {
             backfill = false;
           };
           permissions = {
-            #"*" = "relay";
+            # "*" = "relay";
             "thebois.nl" = "user";
             "@matthijs:thebois.nl" = "admin";
           };

@@ -25,6 +25,7 @@ in {
     ];
 
     modules.matrix.synapse-admin.enable = true;
+    modules.matrix.mautrix-whatsapp.enable = true;
 
     services.matrix-synapse = {
       enable = true;
