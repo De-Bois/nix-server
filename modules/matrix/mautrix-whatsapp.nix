@@ -40,8 +40,8 @@ in {
           };
         };
         bridge = {
-          username_template = "whatsapp_{{.FullName}}";
-          # displayname_template = "{{or .BusinessName .PushName .JID}} (WA)";
+          username_template = "whatsapp_{{.}}";
+          displayname_template = "{{or .BusinessName .PushName .JID}} (WA)";
           encription = {
             allow = true;
             default = true;
