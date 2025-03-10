@@ -15,7 +15,7 @@ in {
     # Libolm is marked as insecure, encryption is not guaranteed!
     #
     ############################################################
-    nixpkgs.config.permittedInsecurePackages = [
+    pkgs.config.permittedInsecurePackages = [
       "olm-3.2.16"
     ];
 
