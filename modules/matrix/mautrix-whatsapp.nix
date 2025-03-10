@@ -40,10 +40,10 @@ in {
           };
         };
         bridge = {
-          # encription = {
-          #   allow = true;
-          #   default = true;
-          # };
+          encription = {
+            allow = true;
+            default = true;
+          };
           history_sync = {
             backfill = false;
           };
