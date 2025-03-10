@@ -17,7 +17,17 @@
             inherit inputs system; 
             pkgs = import packages { 
               inherit system; 
-              config = { allowUnfree = true; }; 
+              config = { 
+                allowUnfree = true; 
+                ############################################################
+                #
+                # Libolm is marked as insecure, encryption is not guaranteed!
+                #
+                ############################################################
+                permittedInsecurePackages = [
+                  "olm-3.2.16"
+                ];
+              }; 
             };
           };
           modules = [
