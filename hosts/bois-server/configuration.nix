@@ -25,6 +25,15 @@
     registration_shared_secret.owner = "matrix-synapse";
   };
 
+    ############################################################
+    #
+    # Libolm is marked as insecure, encryption is not guaranteed!
+    #
+    ############################################################
+    nixpkgs.config.permittedInsecurePackages = [
+      "olm-3.2.16"
+    ];
+
   modules = {
     tmux = { enable = true; plugins = [pkgs.tmuxPlugins.better-mouse-mode]; };
     ssh.enable = true;

@@ -10,15 +10,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    ############################################################
-    #
-    # Libolm is marked as insecure, encryption is not guaranteed!
-    #
-    ############################################################
-    pkgs.config.permittedInsecurePackages = [
-      "olm-3.2.16"
-    ];
-
     services.postgresql = {
       ensureDatabases = [ "mautrix-whatsapp" ];
       ensureUsers = [
