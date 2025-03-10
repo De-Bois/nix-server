@@ -30,7 +30,7 @@ in {
     # Setting below is set to false!
     #
     # #############################################################################
-    modules.matrix.mautrix-whatsapp.enable = false;
+    modules.matrix.mautrix-whatsapp.enable = true;
 
     services.matrix-synapse = {
       enable = true;
