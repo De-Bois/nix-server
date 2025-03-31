@@ -1,4 +1,4 @@
-{ inputs, pkgs, lib, config, ... }:
+{ inputs, pkgs, plex, lib, config, ... }:
 
 with lib; let
   cfg = config.modules.plex;
