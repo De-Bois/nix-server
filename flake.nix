@@ -4,12 +4,12 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-24.11";
-    plex.url = "nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
     let
       mkSystem = packages: system: hostname:
         nixpkgs.lib.nixosSystem {
