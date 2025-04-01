@@ -4,7 +4,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-24.11";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -19,6 +19,10 @@
             pkgs = import packages { 
               inherit system; 
               config = { allowUnfree = true; }; 
+            };
+            pkgs-unstable = import nixpkgs-unstable {
+              inherit system;
+              config.allowUnfree = true;
             };
           };
           modules = [

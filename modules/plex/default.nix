@@ -1,11 +1,7 @@
-{ inputs, pkgs, nixpkgs-unstable, system, lib, config, ... }:
+{ inputs, pkgs, pkgs-unstable, system, lib, config, ... }:
 
 with lib; let
-  cfg = config.modules.plex;
-  pkgs-unstable = import nixpkgs-unstable {
-      inherit system;
-      config.allowUnfree = true;
-  };
+  cfg = config.modules.plex;  
 in {
   options = {
     modules.plex = {
