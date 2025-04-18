@@ -15,10 +15,6 @@
           inherit system;
           specialArgs = { 
             inherit inputs system; 
-            pkgs = import packages { 
-              inherit system; 
-              config = { allowUnfree = true; }; 
-            };
           };
           modules = [
             { networking.hostName = hostname; }
