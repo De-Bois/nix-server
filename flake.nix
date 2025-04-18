@@ -16,14 +16,6 @@
           specialArgs = { 
             inherit inputs system; 
             nixpkgs.allowUnfree = true; 
-            ############################################################
-            #
-            # Libolm is marked as insecure, encryption is not guaranteed!
-            #
-            ############################################################
-            nixpkgs.config.permittedInsecurePackages = [
-              "olm-3.2.16"
-            ];
           };
           modules = [
             { networking.hostName = hostname; }

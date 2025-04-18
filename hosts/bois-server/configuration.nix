@@ -11,6 +11,15 @@
       ../../modules/default.nix
   ];
 
+  ############################################################
+  #
+  # Libolm is marked as insecure, encryption is not guaranteed!
+  #
+  ############################################################
+  nixpkgs.config.permittedInsecurePackages = [
+    "olm-3.2.16"
+  ];
+
   sops.defaultSopsFile = ../../secrets/bois-secrets.yaml;
   sops.defaultSopsFormat = "yaml";
   sops.age.keyFile = "/etc/sops-age-key.txt";
