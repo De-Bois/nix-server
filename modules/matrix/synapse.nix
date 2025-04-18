@@ -1,12 +1,10 @@
 { inputs, pkgs, lib, config, ... }:
 
 with lib; let
-  cfg = config.modules.synapse;
+  cfg = config.modules.matrix.synapse;
 in {
-  options = {
-    modules.synapse = {
-      enable = mkEnableOption "Synapse Matrix server";
-    };
+  options.modules.matrix.synapse = {
+    enable = mkEnableOption "Synapse Matrix server";
   };
 
   config = mkIf cfg.enable {
@@ -25,6 +23,14 @@ in {
     environment.systemPackages = with pkgs; [
       matrix-synapse
     ];
+
+    modules.matrix.synapse-admin.enable = true;
+    # #############################################################################
+    #
+    # Setting below is set to false!
+    #
+    # #############################################################################
+    modules.matrix.mautrix-whatsapp.enable = true;
 
     services.matrix-synapse = {
       enable = true;

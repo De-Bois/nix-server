@@ -29,7 +29,8 @@ in
   };
 
   config = mkIf cfg.enable {
-    modules.synapse.enable = true;
+    modules.matrix.synapse.enable = true;
+    
     networking.firewall.allowedTCPPorts = [ port ]; 
     services.nginx.virtualHosts."${serverName}" = {
         inherit serverName;
