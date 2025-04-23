@@ -2,7 +2,7 @@
 
 stdenv.mkDerivation rec {
   pname = "pelican-wings";
-  version = "v1.0.0-beta8";
+  version = "v1.0.0-beta11";
 
   src = fetchurl {
     url = "https://github.com/pelican-dev/wings/releases/download/${version}/wings_linux_amd64";
