@@ -29,7 +29,7 @@
     plex.enable = true;
     cloudflared.enable = true;
     nginx.enable = true;
-    nextcloud.enable = true;
+    nextcloud.enable = false;
     plexx = {
       enable = true;
       plexxUid = toString config.users.users.thijs.uid;
@@ -78,6 +78,13 @@
 fileSystems."/mnt/StoragePool/Media" =
   {
     device = "StoragePool/Media";
+    fsType = "zfs";
+    options = ["nofail"];
+  };
+
+  fileSystems."/var/lib/nextcloud" =
+  {
+    device = "StoragePool/Nextcloud";
     fsType = "zfs";
     options = ["nofail"];
   };
