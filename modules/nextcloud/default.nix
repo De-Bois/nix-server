@@ -14,6 +14,7 @@ config = mkIf cfg.enable {
             enable = true;
             package = pkgs.nextcloud31;
             hostName = "cloud.hubclup.nl";
+            https = true;
             #config.adminpassFile = "${pkgs.writeText "adminpass" "test123"}";
             config.adminpassFile = "/etc/nextcloud-admin-pass";
             config.dbtype = "sqlite";
