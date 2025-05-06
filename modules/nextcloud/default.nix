@@ -19,7 +19,7 @@ config = mkIf cfg.enable {
             config.dbtype = "sqlite";
             #https = true;
             #home = "/mnt/StoragePool/Media/NextCloud";
-            datadir = "/mnt/StoragePool/Media/NextCloud";
+            #datadir = "/mnt/StoragePool/Media/NextCloud";
         };
     };
 }
