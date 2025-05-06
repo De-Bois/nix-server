@@ -12,6 +12,7 @@ in
     ./modules/blyatclicker.nix
     ./modules/epic.nix
     ./modules/jf.nix
+    ./modules/nextcloud.nix
   ];
 
   options.modules.nginx = {
