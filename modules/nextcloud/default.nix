@@ -12,7 +12,7 @@ in {
 config = mkIf cfg.enable {
         services.nextcloud = {
             enable = true;
-            package = pkgs.nextcloud31;
+            package = pkgs.nextcloud29;
             hostName = "192.168.1.100";
             #config.adminpassFile = "${pkgs.writeText "adminpass" "test123"}";
             config.adminpassFile = "/etc/nextcloud-admin-pass";
