@@ -23,8 +23,6 @@
    };
 
   environment.etc."nextcloud-admin-pass".text = "Waarommagiknietinloggen2323!";
-
-  security.acme.validMinDays = 999;
   
   modules = {
     ssh.enable = true;
