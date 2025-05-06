@@ -12,7 +12,7 @@ in {
 config = mkIf cfg.enable {
         services.nextcloud = {
             enable = true;
-            package = pkgs.nextcloud31;
+            package = pkgs.nextcloud30;
             hostName = "cloud.hubclup.nl";
             https = true;
             #config.adminpassFile = "${pkgs.writeText "adminpass" "test123"}";
