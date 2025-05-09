@@ -13,6 +13,7 @@ in
     ./modules/epic.nix
     ./modules/jf.nix
     ./modules/ghostfolio.nix
+    ./modules/chat.nix
   ];
 
   options.modules.nginx = {

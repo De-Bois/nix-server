@@ -11,7 +11,16 @@
       ../../modules/default.nix
   ];
 
-  sops.defaultSopsFile = ../../secrets/bois-secrets.yaml;
+  ############################################################
+  #
+  # Libolm is marked as insecure, encryption is not guaranteed!
+  #
+  ############################################################
+  nixpkgs.config.permittedInsecurePackages = [
+    "olm-3.2.16"
+  ];
+
+  sops.defaultSopsFile = ../../secrets/bois/bois-secrets.yaml;
   sops.defaultSopsFormat = "yaml";
   sops.age.keyFile = "/etc/sops-age-key.txt";
   
@@ -19,9 +28,10 @@
     cloudflared_token.owner = "cloudflared";
     wireguard_key.owner = "plex";
     ghostfolio = {
-      sopsFile = ../../secrets/ghostfolio.env;
+      sopsFile = ../../secrets/bois/ghostfolio.env;
       format = "dotenv";
     };
+    # registration_shared_secret.owner = "matrix-synapse";
   };
 
   modules = {
@@ -58,6 +68,7 @@
     epic.enable = true; # Port 84
     jf.enable = true; # Port 86
     ghostfolio.enable = true; # Port 87
+    chat.enable = false; # Port 88
   };
 
   # Enable hardware acceleration for on iGPU
@@ -85,6 +96,8 @@
       initialPassword = "hello";
     };
   };
+
+  nixpkgs.config.allowUnfree = true;
 
   # List services that you want to enable:
 

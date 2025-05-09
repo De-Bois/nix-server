@@ -52,6 +52,7 @@
     fd     # find
     sops   # secrets
     age    # secrets
+    pwgen   # password generator
   ];
 
   # Enable networking
