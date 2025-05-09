@@ -31,7 +31,7 @@
       sopsFile = ../../secrets/bois/ghostfolio.env;
       format = "dotenv";
     };
-    registration_shared_secret.owner = "matrix-synapse";
+    # registration_shared_secret.owner = "matrix-synapse";
   };
 
   modules = {
