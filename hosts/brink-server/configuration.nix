@@ -10,7 +10,7 @@
       #inputs.home-manager.nixosModules.default
     ];
 
-  sops.defaultSopsFile = ../../secrets/thijs-secrets.yaml;
+  sops.defaultSopsFile = ../../secrets/thijs/thijs-secrets.yaml;
   sops.defaultSopsFormat = "yaml";
   sops.age.keyFile = "/etc/sops-age-key.txt";
   
