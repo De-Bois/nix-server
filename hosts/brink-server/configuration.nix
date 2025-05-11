@@ -82,15 +82,12 @@ fileSystems."/mnt/StoragePool/Media" =
     options = ["nofail"];
   };
 
-  fileSystems."/var/lib/nextcloud" =
+  fileSystems."/var/lib/nextcloud/data" =
   {
     device = "StoragePool/Nextcloud";
     fsType = "zfs";
-    options = ["nofail"];
+    options = ["nofail" "uid=${toString config.users.users.nextcloud.uid }" "gid=${toString config.users.groups.nextcloud.gid}"];
   };
-
-
-
   
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.thijs = {
@@ -99,6 +96,11 @@ fileSystems."/mnt/StoragePool/Media" =
     extraGroups = [ "networkmanager" "wheel" ];
     initialPassword = "hello";
     uid = 1000;   
+  };
+
+  users.users.nextcloud = {
+    isSystemUser = true;
+    description = "nextcloud";  
   };
 
   boot.supportedFilesystems = [ "zfs" ];
