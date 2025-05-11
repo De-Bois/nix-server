@@ -10,17 +10,43 @@ in {
   };
 
 config = mkIf cfg.enable {
+        
         services.nextcloud = {
             enable = true;
-            package = pkgs.nextcloud31;
+            package = pkgs.nextcloud30;
+            extraApps = {
+              inherit (config.services.nextcloud.package.packages.apps) 
+              contacts 
+              calendar 
+              tasks
+              twofactor_nextcloud_notification
+              twofactor_totp
+              onlyoffice
+              spreed
+              ;
+            };
             hostName = "cloud.hubclup.nl";
             https = true;
-            #config.adminpassFile = "${pkgs.writeText "adminpass" "test123"}";
-            config.adminpassFile = "/etc/nextcloud-admin-pass";
-            config.dbtype = "sqlite";
-            #https = true;
-            #home = "/mnt/StoragePool/Media/NextCloud";
-            #datadir = "/mnt/StoragePool/Media/NextCloud";
+            config = {
+              adminpassFile = "${config.sops.secrets.nextcloud_admin_pass.path}";
+              dbtype = "pgsql";
+            };
+            settings = {
+              enablePreviewProviders = [
+                  "OC\\Preview\\BMP"
+                  "OC\\Preview\\GIF"
+                  "OC\\Preview\\JPEG"
+                  "OC\\Preview\\Krita"
+                  "OC\\Preview\\MarkDown"
+                  "OC\\Preview\\MP3"
+                  "OC\\Preview\\OpenDocument"
+                  "OC\\Preview\\PNG"
+                  "OC\\Preview\\TXT"
+                  "OC\\Preview\\XBitmap"
+                  "OC\\Preview\\HEIC"
+                  "OC\\Preview\\TIFF"
+                ];
+            };                       
         };
     };
 }

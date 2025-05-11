@@ -22,14 +22,18 @@
     owner = "plex";
    };
 
-  environment.etc."nextcloud-admin-pass".text = "Waarommagiknietinloggen2323!";
+   sops.secrets.nextcloud_admin_pass = {
+    owner = "nextcloud";
+   };
+
+  #environment.etc."nextcloud-admin-pass".text = "Waarommagiknietinloggen2323!";
   
   modules = {
     ssh.enable = true;
     plex.enable = true;
     cloudflared.enable = true;
     nginx.enable = true;
-    nextcloud.enable = false;
+    nextcloud.enable = true;
     plexx = {
       enable = true;
       plexxUid = toString config.users.users.thijs.uid;
