@@ -86,7 +86,7 @@ fileSystems."/mnt/StoragePool/Media" =
   {
     device = "StoragePool/Nextcloud";
     fsType = "zfs";
-    options = ["nofail" "uid=${toString config.users.users.nextcloud.uid }" "gid=${toString config.users.groups.nextcloud.gid}"];
+    options = ["nofail"];
   };
   
   # Define a user account. Don't forget to set a password with ‘passwd’.
