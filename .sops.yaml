@@ -7,3 +7,11 @@ creation_rules:
     - age:
       - *bois
       - *thijs
+  - path_regex: secrets/bois/[^/]+\.(yaml|json|env|ini)$
+    key_groups:
+    - age:
+      - *bois
+  - path_regex: secrets/thijs/[^/]+\.(yaml|json|env|ini)$
+    key_groups:
+    - age:
+      - *thijs
