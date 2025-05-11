@@ -100,8 +100,11 @@ fileSystems."/mnt/StoragePool/Media" =
 
   users.users.nextcloud = {
     isSystemUser = true;
-    description = "nextcloud";  
+    description = "nextcloud";
+    group = "nextcloud";  
   };
+
+  users.groups.nextcloud = {};
 
   boot.supportedFilesystems = [ "zfs" ];
   boot.zfs.forceImportRoot = false;
