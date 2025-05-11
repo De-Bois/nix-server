@@ -82,13 +82,12 @@ fileSystems."/mnt/StoragePool/Media" =
     options = ["nofail"];
   };
 
-  fileSystems."/var/lib/nextcloud" =
-  {
-    mountPoint= "/var/lib/nextcloud/data";
-    device = "StoragePool/Nextcloud";
-    fsType = "zfs";
-    options = ["nofail"];
-  };
+ # fileSystems."/var/lib/nextcloud/data" =
+ # {
+ #   device = "StoragePool/Nextcloud";
+ #   fsType = "zfs";
+ #   options = ["nofail"];
+ # };
   
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.thijs = {
