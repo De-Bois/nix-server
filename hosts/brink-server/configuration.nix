@@ -82,8 +82,9 @@ fileSystems."/mnt/StoragePool/Media" =
     options = ["nofail"];
   };
 
-  fileSystems."/var/lib/nextcloud/data" =
+  fileSystems."/var/lib/nextcloud" =
   {
+    mountPoint= "/var/lib/nextcloud/data";
     device = "StoragePool/Nextcloud";
     fsType = "zfs";
     options = ["nofail"];
