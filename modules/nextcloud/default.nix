@@ -15,7 +15,7 @@ config = mkIf cfg.enable {
             enable = true;
             package = pkgs.nextcloud30;
             extraApps = {
-              inherit (config.services.nextcloud.package.packages.apps) contacts calendar tasks twofactor_nextcloud_notification twofactor_totp onlyoffice spreed;
+              inherit (config.services.nextcloud.package.packages.apps) contacts calendar tasks twofactor_totp onlyoffice spreed;
             };
             hostName = "cloud.hubclup.nl";
             https = true;
