@@ -45,7 +45,6 @@
         
   };
 
- {
   services.smartd = {
     enable = true;
     devices = [
@@ -57,7 +56,8 @@
       }
     ];
   };
-}
+
+ 
 
   modules.nginx = {
     #index.enable = true; # Port 85
@@ -126,4 +126,5 @@ fileSystems."/mnt/StoragePool/Media" =
   boot.zfs.forceImportRoot = false;
   networking.hostId = "44779f7c";
 
+  
 }
