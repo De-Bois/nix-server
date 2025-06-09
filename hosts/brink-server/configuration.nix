@@ -33,7 +33,7 @@
     plex.enable = true;
     cloudflared.enable = true;
     nginx.enable = true;
-    nextcloud.enable = true;
+    #nextcloud.enable = true;
     plexx = {
       enable = true;
       plexxUid = toString config.users.users.thijs.uid;
