@@ -45,7 +45,19 @@
         
   };
 
- 
+ {
+  services.smartd = {
+    enable = true;
+    devices = [
+      {
+        device = "/dev/disk/by-id/ata-ST12000NM0127_ZJV4GJHQ";
+        device = "/dev/disk/by-id/ata-ST12000NM0127_ZJV4XA1H";
+        device = "/dev/disk/by-id/ata-ST12000NM0127_ZJV4XDD8";
+        device = "/dev/disk/by-id/ata-ST12000NM0127_ZJV4XSJ4"; # FIXME: Change this to your actual disk
+      }
+    ];
+  };
+}
 
   modules.nginx = {
     #index.enable = true; # Port 85
