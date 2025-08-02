@@ -19,6 +19,7 @@ config = mkIf cfg.enable {
             };
             hostName = "cloud.hubclup.nl";
             https = true;
+            database.createLocally = true;
             config = {
               adminpassFile = "${config.sops.secrets.nextcloud_admin_pass.path}";
               dbtype = "pgsql";
