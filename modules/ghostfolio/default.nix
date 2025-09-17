@@ -1,7 +1,7 @@
 { inputs, pkgs, lib, config, ... }:
 
 with lib; let
-  version = "2.139.1";
+  version = "2.199.0";
   cfg = config.modules.ghostfolio;
 in {
   options = {
