@@ -13,7 +13,7 @@ config = mkIf cfg.enable {
         
         services.nextcloud = {
             enable = true;
-            package = pkgs.nextcloud30;
+            package = pkgs.nextcloud31;
             extraApps = {
               inherit (config.services.nextcloud.package.packages.apps) contacts calendar tasks onlyoffice spreed;
             };
