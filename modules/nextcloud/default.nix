@@ -17,6 +17,7 @@ config = mkIf cfg.enable {
             extraApps = {
               inherit (config.services.nextcloud.package.packages.apps) contacts calendar tasks spreed;
             };
+            extraAppsEnable = true;
             hostName = "cloud.hubclup.nl";
             https = true;
             database.createLocally = true;
