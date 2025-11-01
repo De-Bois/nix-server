@@ -43,8 +43,9 @@ config = mkIf cfg.enable {
         };
         services.onlyoffice = {
           enable = true;
-          hostname = "localhost";
+          hostname = "onlyoffice";
           #jwtSecretFile = config.age.secrets.onlyoffice-jwt.path;
         };
+        services.nginx.virtualHosts."onlyoffice".listen = [ { addr = "127.0.0.1"; port = 90; } ];
     };
 }
