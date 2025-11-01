@@ -15,7 +15,7 @@ config = mkIf cfg.enable {
             enable = true;
             package = pkgs.nextcloud31;
             extraApps = {
-              inherit (config.services.nextcloud.package.packages.apps) contacts calendar tasks onlyoffice spreed richdocuments;
+              inherit (config.services.nextcloud.package.packages.apps) contacts calendar tasks onlyoffice spreed richdocumentscode;
             };
             hostName = "cloud.hubclup.nl";
             https = true;
