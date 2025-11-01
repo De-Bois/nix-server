@@ -15,7 +15,7 @@ config = mkIf cfg.enable {
             enable = true;
             package = pkgs.nextcloud31;
             extraApps = {
-              inherit (config.services.nextcloud.package.packages.apps) contacts calendar tasks onlyoffice spreed;
+              inherit (config.services.nextcloud.package.packages.apps) contacts calendar tasks onlyoffice spreed richdocuments;
             };
             hostName = "cloud.hubclup.nl";
             https = true;
@@ -40,6 +40,11 @@ config = mkIf cfg.enable {
                   "OC\\Preview\\TIFF"
                 ];
             };                       
+        };
+        services.onlyoffice = {
+          enable = true;
+          hostname = "localhost";
+          jwtSecretFile = config.age.secrets.onlyoffice-jwt.path;
         };
     };
 }
