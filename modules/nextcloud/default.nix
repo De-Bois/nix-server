@@ -46,6 +46,6 @@ config = mkIf cfg.enable {
           hostname = "localhosts";
           #jwtSecretFile = config.age.secrets.onlyoffice-jwt.path;
         };
-        services.nginx.virtualHosts."localhost".listen = [ { addr = "127.0.0.1"; port = 90; } ];
+        #services.nginx.virtualHosts."localhost".listen = [ { addr = "127.0.0.1"; port = 8080; } ];
     };
 }
