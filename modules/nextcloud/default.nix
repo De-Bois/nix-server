@@ -41,11 +41,11 @@ config = mkIf cfg.enable {
                 ];
             };                       
         };
-        services.onlyoffice = {
-          enable = true;
-          hostname = "localhosts";
-          #jwtSecretFile = config.age.secrets.onlyoffice-jwt.path;
-        };
-        #services.nginx.virtualHosts."localhost".listen = [ { addr = "127.0.0.1"; port = 8080; } ];
+       #services.onlyoffice = {
+       #  enable = true;
+       #  hostname = "localhosts";
+       #  #jwtSecretFile = config.age.secrets.onlyoffice-jwt.path;
+       #};
+       ##services.nginx.virtualHosts."localhost".listen = [ { addr = "127.0.0.1"; port = 8080; } ];
     };
 }
