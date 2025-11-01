@@ -44,7 +44,7 @@ config = mkIf cfg.enable {
         services.onlyoffice = {
           enable = true;
           hostname = "localhost";
-          jwtSecretFile = config.age.secrets.onlyoffice-jwt.path;
+          #jwtSecretFile = config.age.secrets.onlyoffice-jwt.path;
         };
     };
 }
