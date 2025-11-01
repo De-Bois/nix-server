@@ -43,9 +43,9 @@ config = mkIf cfg.enable {
         };
         services.onlyoffice = {
           enable = true;
-          hostname = "onlyoffice.hubclup.nl";
+          hostname = "localhost";
           #jwtSecretFile = config.age.secrets.onlyoffice-jwt.path;
         };
-        services.nginx.virtualHosts."onlyoffice.hubclup.nl".listen = [ { addr = "127.0.0.1"; port = 90; } ];
+        services.nginx.virtualHosts."localhost".listen = [ { addr = "127.0.0.1"; port = 8080; } ];
     };
 }
